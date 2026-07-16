@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work samples — Brian Nuckols, Newsworks Lab</title>
+<link rel="stylesheet" href="../assets/hub.css">
+</head>
+<body>
+<div class="wrap wide">
+  <button class="toggle" id="themeBtn">◐ theme</button>
+  <a class="backlink" href="../index.html">← Application dashboard</a>
+  <div class="hero">
+    <p class="kick">Work samples</p>
+    <h1>Three packages, two desks, one engine</h1>
+    <p class="lede">Three published western-Pennsylvania stories, each shipped as a live, one-command-reproducible data package. Two ran in Public Source and one in the West Hills Gazette, so the method has cleared two regional desks. Every package recomputes its own numbers with <code>python 03-harness/check.py</code>, offline.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="fcard" style="--pkg:var(--water)">
+      <p class="kick">Sample 1 · Public Source · Dec 2025</p>
+      <h3>The Pittsburgh Water Deliberation Record</h3>
+      <p class="dek">Two years of board votes coded from the official minutes on four variables. The finding: 228 resolutions, 223 unanimous, zero no votes, more than $871 million authorized, and 156 resolutions that drew no recorded question. A random-sampled peer test put the board's 100% unanimity against 69% at comparable water boards, and nine named human sources carry the claims.</p>
+      <a class="btn solid" href="https://bnuckols13.github.io/pittsburgh-water-deliberation-record/">Open</a>
+      <a class="btn" href="https://github.com/bnuckols13/pittsburgh-water-deliberation-record">Repo ↗</a>
+    </div>
+    <div class="fcard" style="--pkg:var(--zoning)">
+      <p class="kick">Sample 2 · Public Source · Sept 2025</p>
+      <h3>The Pittsburgh Inclusionary Zoning Record</h3>
+      <p class="dek">Six years after the city required affordable units in two neighborhoods, it published no count of what the rule produced. The package builds the count the city never released: what is built, what is under construction, what is merely proposed, and the projects downsized to duck the threshold.</p>
+      <a class="btn solid" href="https://bnuckols13.github.io/pittsburgh-inclusionary-zoning-record/">Open</a>
+      <a class="btn" href="https://github.com/bnuckols13/pittsburgh-inclusionary-zoning-record">Repo ↗</a>
+    </div>
+    <div class="fcard" style="--pkg:var(--airport)">
+      <p class="kick">Sample 3 · West Hills Gazette · Oct 2025</p>
+      <h3>The Pittsburgh Airport Terminal Record</h3>
+      <p class="dek">Reconstructs the figures the airport authority would not give at its own ribbon-cutting: $1.248 billion in modernization bonds outstanding and $2.505 billion in debt service to 2056, against a terminal built for 13 to 15 million passengers while 2024 demand held at 9.95 million. Neutral cost language throughout.</p>
+      <a class="btn solid" href="https://bnuckols13.github.io/pittsburgh-airport-terminal-record/">Open</a>
+      <a class="btn" href="https://github.com/bnuckols13/pittsburgh-airport-terminal-record">Repo ↗</a>
+    </div>
+    <div class="fcard" style="--pkg:var(--water)">
+      <p class="kick">And the result · Public Source</p>
+      <h3>The observer effect</h3>
+      <p class="dek">At the first board meeting after Sample 1 ran, the Pittsburgh Water board asked 40 questions, roughly seven times its 24-month average, and issued a stop-work order. Not "I did a rigorous study" but "the reporting measurably changed a public body." Written third person, the institution as the subject.</p>
+      <a class="btn" href="https://www.publicsource.org/pittsburgh-water-board-transparency-rate-hike/">Read the follow-up ↗</a>
+    </div>
+  </div>
+
+  <h2 class="sh" style="--pkg:var(--accent)">The through-line</h2>
+  <p>All three run on the same engine: documented, archived, re-verifiable public-records work, published so a reader can check it rather than trust it. The regional clip and the reproducible package are the same method at two altitudes, and the package is built to hand to a partner newsroom intact.</p>
+
+  <div class="foot">
+    Brian Nuckols · <a href="mailto:brianjnuckols@gmail.com">brianjnuckols@gmail.com</a> · <a href="https://bnuckols13.github.io/">full portfolio</a>. Underlying clips available on request; the reproducible packages are live above.
+  </div>
+</div>
+<script>document.getElementById('themeBtn').addEventListener('click',()=>{const r=document.documentElement,c=r.getAttribute('data-theme');const d=c?c==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark');});</script>
+</body>
+</html>

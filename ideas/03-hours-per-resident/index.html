@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hours Per Resident — story idea</title>
+<link rel="stylesheet" href="../../assets/hub.css">
+<style>:root{--pkg:var(--nursing)}</style>
+</head>
+<body>
+<div class="wrap" style="--pkg:var(--nursing)">
+  <button class="toggle" id="themeBtn">◐ theme</button>
+  <a class="backlink" href="../index.html">← The five ideas</a>
+  <div class="hero">
+    <p class="kick">Story idea 03 · hidden harm to bodies</p>
+    <h1>Hours Per Resident</h1>
+    <p class="lede">Every nursing home files its payroll-verified staffing hours with the federal government each quarter, and the same agency records how often its residents develop bed sores. Join the two for every home in Allegheny County, adjust for how sick the residents are, and a gradient should appear.</p>
+    <p><span class="tier confirmed">Confirmed</span> the repeal, the facility records, the CMS data source &nbsp; <span class="tier build">Build</span> the case-mix-adjusted county table and the gradient</p>
+  </div>
+
+  <h2 class="sh">The build so far</h2>
+  <p>These facilities surfaced from CMS-derived records and anchor the reporting. The figures are drawn from a public CMS mirror and are confirmed against CMS Care Compare and the Payroll-Based Journal on the pull. The staffing-to-harm gradient across the full county is a build, and it earns its credibility only after case-mix adjustment.</p>
+  <table>
+    <thead><tr><th>Facility</th><th>CMS ID</th><th>What the record shows</th></tr></thead>
+    <tbody>
+      <tr><td>Spring Hill Rehabilitation &amp; Nursing Center</td><td class="src">395666</td><td>115 deficiency citations in recent history; a January 2026 immediate-jeopardy finding for failing to implement abuse-prevention policy; Special Focus Facility candidate.</td></tr>
+      <tr><td>Harmar Village Care Center</td><td class="src">—</td><td>Roughly 0.59 registered-nurse hours per resident-day, against a long-stay pressure-injury rate above the state average.</td></tr>
+      <tr><td>Heritage Care Center</td><td class="src">395732</td><td>Surfaced in the same CMS-derived pull; figures to be confirmed on the direct download.</td></tr>
+    </tbody>
+  </table>
+  <p class="src">Source: CMS Care Compare and the Payroll-Based Journal quarterly files (via a public mirror pending the direct pull). No facility is described as violating a federal minimum, because the 2024 rule was repealed and placed under a statutory moratorium to 2034.</p>
+
+  <h2 class="sh">The pitch</h2>
+  <div class="n7">
+    <h3>The hook</h3>
+    <p>At Spring Hill Rehabilitation and Nursing Center on Rhine Street, total nurse staffing runs near 3.26 hours per resident a day, under the 3.48-hour floor the federal government set in 2024 and abandoned this February. Spring Hill carries 115 deficiency citations, a January 2026 immediate-jeopardy finding, and a long-stay bed-sore rate above 7 percent.</p>
+    <h3>The story</h3>
+    <p>Join the Payroll-Based Journal, the payroll-verified hours a home files rather than the numbers it advertises, to Care Compare harm outcomes for every nursing home in Allegheny County, and rank them. The hypothesis the data must earn is a gradient: the lowest-staffed homes cluster among the highest pressure-injury and deficiency rates, with registered-nurse hours the sharpest variable. The claim is a documented gradient across CMS's own figures, scoped as correlation, never cause.</p>
+    <h3>Why now</h3>
+    <p>The 2024 federal minimum-staffing rule was rescinded by interim final rule effective February 2, 2026, aligned with a statutory moratorium that bars enforcement until September 30, 2034. A ten-year floor arrived and vanished while staffing held where it was, and that gap is the peg.</p>
+    <h3>Why you</h3>
+    <p>I build reusable public-records pipelines and hash every source, so a reader re-verifies the county table with no login. I report western Pennsylvania, and I translate case-mix adjustment and deficiency severity into plain reading, on the page and on camera, which a harm-versus-staffing story needs if it is to inform families without frightening them.</p>
+    <h3>The reporting plan</h3>
+    <p>Done: the repeal is confirmed; Spring Hill, Harmar Village, and Heritage are surfaced. The build, and the actual work: pull the case-mix-adjusted hours per resident-day, not raw hours, alongside the risk-adjusted long-stay pressure-injury measure, then test the gradient with acuity controls so a high-acuity rehab home is never set against a custodial one. Unadjusted, the story fails its own credibility gate. Right of reply to every named home.</p>
+    <h3>Logistics</h3>
+    <p>A ranked county table is the spine, refreshed each Payroll-Based Journal quarter. Single-facility bites come off that table on a cadence. The reporting can leave the building for the county long-term-care ombudsman, aides who work the floors, and families reading the same Care Compare page.</p>
+    <h3>The close</h3>
+    <p>Washington spent two years deciding a resident deserved at least 3.48 hours of nursing a day, then filed the number away until 2034. Allegheny County's Payroll-Based Journal already records who fell under it. A reader can check the arithmetic.</p>
+  </div>
+
+  <h2 class="sh">The discipline</h2>
+  <p>Below-threshold figures read as "under the level the 2024 rule would have required," never as a violation, because the rule is repealed and under moratorium. The gradient is correlation, adjusted for resident acuity, and it is worthless without that adjustment. Every named home gets right of reply and the 72-hour hold; no resident is given a clinical diagnosis.</p>
+
+  <div class="foot">Brian Nuckols · <a href="mailto:brianjnuckols@gmail.com">brianjnuckols@gmail.com</a> · <a href="../index.html">the five ideas</a> · <a href="../../index.html">dashboard</a>. A CMS-sourced gradient, case-mix-adjusted; correlation, not cause.</div>
+</div>
+<script>document.getElementById('themeBtn').addEventListener('click',()=>{const r=document.documentElement,c=r.getAttribute('data-theme');const d=c?c==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark');});</script>
+</body>
+</html>

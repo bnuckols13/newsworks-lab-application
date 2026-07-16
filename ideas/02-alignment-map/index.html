@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Alignment Map — story idea</title>
+<link rel="stylesheet" href="../../assets/hub.css">
+<style>:root{--pkg:var(--align)}
+  .layers{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0}
+  @media(max-width:640px){.layers{grid-template-columns:1fr}}
+  .layer{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--pkg);border-radius:10px;padding:.9rem 1rem}
+  .layer h4{font-family:var(--sans);font-size:.9rem;margin:.1rem 0 .3rem}
+  .layer p{font-family:var(--sans);font-size:.8rem;color:var(--soft);margin:0}
+</style>
+</head>
+<body>
+<div class="wrap" style="--pkg:var(--align)">
+  <button class="toggle" id="themeBtn">◐ theme</button>
+  <a class="backlink" href="../index.html">← The five ideas</a>
+  <div class="hero">
+    <p class="kick">Story idea 02 · follow the money</p>
+    <h1>The Alignment Map</h1>
+    <p class="lede">For each issue a Pittsburgh-region government touches, three things can be measured separately: what the elected body actually does, what its donors and registered lobbyists want, and what residents have said they want. The map sets the three side by side, and the gap is the story.</p>
+    <p><span class="tier confirmed">Confirmed</span> lobbying disclosures, votes, budgets, public-comment records &nbsp; <span class="tier build">Build</span> the local-donor join and the per-issue alignment score</p>
+  </div>
+
+  <h2 class="sh">Three signals per issue</h2>
+  <p>Across City Council, County Council, the mayor, and the county executive, each policy area gets three readings, drawn from three separate public records.</p>
+  <div class="layers">
+    <div class="layer"><h4>What officials do</h4><p>Roll-call votes and the dollars a budget actually moves, from the councils' legislative records and the adopted city and county budgets.</p></div>
+    <div class="layer"><h4>What money wants</h4><p>Campaign contributions by interest and the positions of registered lobbyists, from state lobbying disclosure, the Pittsburgh lobbyist registry, and local campaign-finance filings.</p></div>
+    <div class="layer"><h4>What residents asked for</h4><p>Documented public-preference signals: participatory-budgeting outcomes, public-comment tallies, ballot questions, and published local surveys. A record of what was asked for, not a claim to the general will.</p></div>
+  </div>
+
+  <h2 class="sh">The build so far</h2>
+  <p>The public layers are pullable now; the donor layer is the reporting cost. The table below is the structure the map is built on, with one illustrative issue row to show the shape. The alignment reading is a build, not a finding.</p>
+  <table>
+    <thead><tr><th>Layer</th><th>Source</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Votes &amp; budget dollars (city + county)</td><td class="src">Council legislative records (Legistar); adopted budgets</td><td><span class="tier confirmed">Confirmed</span></td></tr>
+      <tr><td>Registered lobbyists &amp; positions</td><td class="src">PA Dept. of State lobbying disclosure; Pittsburgh lobbyist registry</td><td><span class="tier confirmed">Confirmed</span></td></tr>
+      <tr><td>Public-preference signals</td><td class="src">Participatory-budgeting results; public-comment records; ballot questions</td><td><span class="tier confirmed">Confirmed</span></td></tr>
+      <tr><td>Donor interests by official</td><td class="src">Allegheny County + Pittsburgh campaign finance (largely paper at the county Board of Elections)</td><td><span class="tier build">Build</span></td></tr>
+      <tr><td>Per-issue alignment: officials vs. money vs. public</td><td class="src">The join across all four layers</td><td><span class="tier build">Build</span></td></tr>
+    </tbody>
+  </table>
+  <p class="src">The local-campaign-finance layer lives mostly on paper at the county Board of Elections, so digitizing it is the reporting cost and the moat. The same donor-match method already runs in the reporter's opioid-settlement work, where money-in was joined to money-out and the exchange held open.</p>
+
+  <h2 class="sh">The pitch</h2>
+  <div class="n7">
+    <h3>The hook</h3>
+    <p>A council votes on a zoning change, a tax abatement, a contract. Three public records describe that same decision from three angles: the roll call, the donors and lobbyists who had a stake, and the residents who filled the public-comment period. They are almost never read together.</p>
+    <h3>The story</h3>
+    <p>The reporting builds one map of the Pittsburgh region's elected bodies where, issue by issue, the official action sits next to the money that wanted it and the public that asked for something. The claim is not that any vote was bought. The claim is measurable: on which issues the recorded public preference and the recorded donor-and-lobby interest point in opposite directions, and which one the vote followed. The gap is documented from records, not inferred from motive.</p>
+    <h3>Why now</h3>
+    <p>City and county budget seasons and a run of contested local races put fresh votes, fresh filings, and fresh public comment on the record in the same window, which is exactly when the three layers can be pulled together.</p>
+    <h3>Why you</h3>
+    <p>I run the money-in-against-money-out join already, on the opioid-settlement donor work, and I publish the match table with the exchange held open. Every filing, vote, and comment record ships archived and SHA-256 hashed, so a reader rebuilds the alignment map with no login and no trust in me.</p>
+    <h3>The reporting plan</h3>
+    <p>Confirmed and pullable: the votes, the budgets, the state and city lobbying disclosures, the public-comment records. The build, and the bulk of the work: digitizing the county Board of Elections campaign-finance filings, joining donors to the officials who voted, and scoring each issue for alignment. Where a specific official and a specific donor cross the adverse threshold, right of reply and the hold apply before anything publishes.</p>
+    <h3>Logistics</h3>
+    <p>One issue or one body per bite, with the full map as the enterprise feature the bites accrue toward. The build hands off, so a partner newsroom can drop in its own municipality's votes and filings against the same schema.</p>
+    <h3>The close</h3>
+    <p>The votes are public. The donations are public. What residents asked for is public. The region has never been asked to read the three in the same frame, one issue at a time.</p>
+  </div>
+
+  <h2 class="sh">The discipline</h2>
+  <p>Alignment is a measured gap between records, never an alleged exchange. The map names institutions and elected officials, who are owed right of reply; it does not name a private donor as a wrongdoer, and it does not read a vote as bought. Where officials, money, and the public point the same way, that reads on the map too.</p>
+
+  <div class="foot">Brian Nuckols · <a href="mailto:brianjnuckols@gmail.com">brianjnuckols@gmail.com</a> · <a href="../index.html">the five ideas</a> · <a href="../../index.html">dashboard</a>. A records-to-records comparison; no exchange asserted.</div>
+</div>
+<script>document.getElementById('themeBtn').addEventListener('click',()=>{const r=document.documentElement,c=r.getAttribute('data-theme');const d=c?c==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark');});</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brian Nuckols — Newsworks Lab application</title>
+<meta name="description" content="Brian Nuckols's application to Newsworks Lab: cover letter, portfolio, three reproducible work samples, and five western-Pennsylvania story ideas built on the same public-records engine.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%235b4b8a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23fbfaf7' text-anchor='middle'%3EBN%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --paper:#fbfaf7; --card:#fff; --ink:#1a1a1a; --soft:#4a4a4a; --faint:#7d766a;
+    --rule:#d9d4c8; --rule-soft:#ece7dd; --accent:#5b4b8a; --accent-soft:#efeaf6; --chipbg:#f1ece2;
+    --water:#5b4b8a; --zoning:#2a78d6; --airport:#1c5cab;
+    --airportv:#0f766e; --align:#b5179e; --nursing:#b42318; --ladder:#b45309; --earmark:#15803d;
+    --shadow:0 1px 2px rgba(40,32,20,.05);
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:"Cascadia Code",Consolas,ui-monospace,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root{--paper:#14130e;--card:#1c1a14;--ink:#ece7dd;--soft:#b3aa99;--faint:#8a8272;--rule:#37322a;--rule-soft:#2a2620;--accent:#a99ce8;--accent-soft:#241f33;--chipbg:#26221b;--water:#a99ce8;--zoning:#6aa6ee;--airport:#6aa6ee;--airportv:#2dd4bf;--align:#f472b6;--nursing:#f87171;--ladder:#fbbf24;--earmark:#4ade80;--shadow:0 1px 2px rgba(0,0,0,.3);}}
+  :root[data-theme="dark"]{--paper:#14130e;--card:#1c1a14;--ink:#ece7dd;--soft:#b3aa99;--faint:#8a8272;--rule:#37322a;--rule-soft:#2a2620;--accent:#a99ce8;--accent-soft:#241f33;--chipbg:#26221b;--water:#a99ce8;--zoning:#6aa6ee;--airport:#6aa6ee;--airportv:#2dd4bf;--align:#f472b6;--nursing:#f87171;--ladder:#fbbf24;--earmark:#4ade80;--shadow:0 1px 2px rgba(0,0,0,.3);}
+  :root[data-theme="light"]{--paper:#fbfaf7;--card:#fff;--ink:#1a1a1a;--soft:#4a4a4a;--faint:#7d766a;--rule:#d9d4c8;--rule-soft:#ece7dd;--accent:#5b4b8a;--accent-soft:#efeaf6;--chipbg:#f1ece2;--water:#5b4b8a;--zoning:#2a78d6;--airport:#1c5cab;--airportv:#0f766e;--align:#b5179e;--nursing:#b42318;--ladder:#b45309;--earmark:#15803d;--shadow:0 1px 2px rgba(40,32,20,.05);}
+  *{box-sizing:border-box}
+  html{font-size:17px;scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.62}
+  .wrap{max-width:62rem;margin:0 auto;padding:0 1.4rem}
+  a{color:inherit}
+  .kick{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  h1,h2,h3{font-weight:600;letter-spacing:-.012em;line-height:1.14}
+  header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--rule-soft)}
+  .nav .wrap{display:flex;align-items:center;gap:1rem;height:56px}
+  .brand{font-family:var(--sans);font-weight:700;font-size:.98rem;text-decoration:none}
+  .brand b{color:var(--accent)}
+  .toggle{margin-left:auto;font-family:var(--sans);font-size:.8rem;cursor:pointer;border:1px solid var(--rule);background:var(--card);color:var(--soft);border-radius:999px;padding:.35rem .7rem}
+  .hero{padding:3.6rem 0 2.2rem;border-bottom:1px solid var(--rule-soft)}
+  .hero h1{font-size:clamp(2.1rem,5vw,3rem);margin:.5rem 0 .2rem}
+  .hero .lede{font-size:clamp(1.05rem,2.2vw,1.28rem);color:var(--soft);max-width:46ch;margin:.6rem 0 0;line-height:1.42}
+  .hero .sub{font-family:var(--sans);font-size:.9rem;color:var(--soft);max-width:62ch;margin:1.1rem 0 0;line-height:1.55}
+  .hero .meta{margin:1.4rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem}
+  .hero .meta a{font-family:var(--sans);font-size:.82rem;text-decoration:none;color:var(--soft);border:1px solid var(--rule);border-radius:999px;padding:.4rem .8rem;background:var(--card)}
+  .hero .meta a.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  section{padding:3rem 0;border-bottom:1px solid var(--rule-soft)}
+  h2.section-title{font-size:1.02rem;font-family:var(--sans);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 .3rem}
+  h2.section-title::after{content:'';display:block;height:6px;width:66px;margin-top:.5rem;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='6' viewBox='0 0 40 6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3 T30 3 T40 3' fill='none' stroke='%23000' stroke-width='1.7'/%3E%3C/svg%3E") repeat-x;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='6' viewBox='0 0 40 6'%3E%3Cpath d='M0 3 Q5 0 10 3 T20 3 T30 3 T40 3' fill='none' stroke='%23000' stroke-width='1.7'/%3E%3C/svg%3E") repeat-x}
+  .sec-note{font-family:var(--sans);font-size:.85rem;color:var(--faint);margin:.2rem 0 1.5rem;max-width:66ch}
+  .feat{display:grid;gap:1rem}
+  .fcard{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--pkg,var(--accent));border-radius:12px;padding:1.35rem 1.5rem;box-shadow:var(--shadow);transition:transform .12s,box-shadow .12s}
+  .fcard:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(40,32,20,.09)}
+  .fcard .kick{color:var(--pkg,var(--accent))}
+  .fcard h3{font-size:1.32rem;margin:.35rem 0 .3rem}
+  .fcard .dek{color:var(--soft);font-size:1rem;margin:0 0 .9rem;max-width:58ch}
+  .actions{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center}
+  .btn{font-family:var(--sans);font-size:.85rem;font-weight:600;text-decoration:none;border-radius:8px;padding:.5rem .85rem;border:1px solid var(--pkg,var(--accent));color:var(--pkg,var(--accent));background:transparent}
+  .btn.solid{background:var(--pkg,var(--accent));color:#fff}
+  :root[data-theme="dark"] .btn.solid{color:#14130e}
+  @media (prefers-color-scheme:dark){.btn.solid{color:#14130e}}
+  .btn:hover{filter:brightness(1.06)}
+  .pill{font-family:var(--mono);font-size:.72rem;color:var(--faint);background:var(--chipbg);border-radius:999px;padding:.35rem .7rem;margin-left:auto}
+  @media(max-width:560px){.pill{margin-left:0}}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .foot{padding:2.4rem 0 4rem;font-family:var(--sans);font-size:.82rem;color:var(--faint)}
+  .foot a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">Brian Nuckols <b>·</b> Newsworks Lab</a>
+  <button class="toggle" id="themeBtn">◐ theme</button>
+</div></header>
+
+<div id="top" class="hero"><div class="wrap">
+  <p class="kick">Application · Enterprise Journalist</p>
+  <h1>The application, on one page</h1>
+  <p class="lede">A cover letter, a portfolio, three reproducible work samples, and five western-Pennsylvania story ideas.</p>
+  <p class="sub">Every sample and every idea runs on one engine: a reusable public-records production line that turns a sworn form, a bond filing, a fee schedule, a payroll journal, or a capital-budget line-item into a repeatable series, with each source archived and SHA-256 hashed so a reader re-verifies it with no network and no keys. That is open-source journalism in the sense the lab's mission names.</p>
+  <div class="meta">
+    <a class="primary" href="cover-letter/index.html">Read the cover letter</a>
+    <a href="https://bnuckols13.github.io/">Full portfolio ↗</a>
+    <a href="mailto:brianjnuckols@gmail.com">brianjnuckols@gmail.com</a>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2 class="section-title">The cover letter</h2>
+  <p class="sec-note">One page: the reporting method, keyed to what Newsworks Lab is building.</p>
+  <div class="feat"><div class="fcard">
+    <p class="kick">To Andrew Conte</p>
+    <h3>Why this reporter, and what the method produces for the lab</h3>
+    <p class="dek">Opens on the Pittsburgh Water board deciding millions with no discussion, names the records engine, and shows the four-part checklist the samples and ideas were built against.</p>
+    <div class="actions"><a class="btn solid" href="cover-letter/index.html">Read it</a></div>
+  </div></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="section-title">The portfolio</h2>
+  <p class="sec-note">The byline reel and every clip, already live.</p>
+  <div class="feat"><div class="fcard">
+    <p class="kick">bnuckols13.github.io</p>
+    <h3>Investigative work, published and reproducible</h3>
+    <p class="dek">Featured records, selected journalism across Public Source, Jacobin, Pirate Wires, the Seattle Times and the West Hills Gazette, plus essays, broadcast, and the reproducible-package method.</p>
+    <div class="actions"><a class="btn solid" href="https://bnuckols13.github.io/">Open the portfolio ↗</a></div>
+  </div></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="section-title">Three work samples</h2>
+  <p class="sec-note">Three live, one-command-reproducible data packages across two regional desks. Each ships its own evidence chain; each recomputes with <code>python 03-harness/check.py</code>.</p>
+  <div class="feat">
+    <div class="fcard" style="--pkg:var(--water)">
+      <p class="kick">Public Source · Dec 2025</p>
+      <h3>The Pittsburgh Water Deliberation Record</h3>
+      <p class="dek">Two years of board votes coded from the minutes: 228 resolutions, 223 unanimous, zero no votes, $871.25M authorized, and a follow-up that measured the board asking 40 questions after the story ran.</p>
+      <div class="actions"><a class="btn solid" href="https://bnuckols13.github.io/pittsburgh-water-deliberation-record/">Open</a><a class="btn" href="https://github.com/bnuckols13/pittsburgh-water-deliberation-record">Repo ↗</a></div>
+    </div>
+    <div class="fcard" style="--pkg:var(--zoning)">
+      <p class="kick">Public Source · Sept 2025</p>
+      <h3>The Pittsburgh Inclusionary Zoning Record</h3>
+      <p class="dek">Six years after the mandate, the city published no count of the affordable units it produced. The package builds the count the city never released.</p>
+      <div class="actions"><a class="btn solid" href="https://bnuckols13.github.io/pittsburgh-inclusionary-zoning-record/">Open</a><a class="btn" href="https://github.com/bnuckols13/pittsburgh-inclusionary-zoning-record">Repo ↗</a></div>
+    </div>
+    <div class="fcard" style="--pkg:var(--airport)">
+      <p class="kick">West Hills Gazette · Oct 2025</p>
+      <h3>The Pittsburgh Airport Terminal Record</h3>
+      <p class="dek">Reconstructs the debt figures the authority would not give at its own ribbon-cutting: $1.248B in modernization bonds outstanding and $2.505B in debt service to 2056.</p>
+      <div class="actions"><a class="btn solid" href="https://bnuckols13.github.io/pittsburgh-airport-terminal-record/">Open</a><a class="btn" href="https://github.com/bnuckols13/pittsburgh-airport-terminal-record">Repo ↗</a></div>
+    </div>
+  </div>
+  <p class="sec-note" style="margin-top:1.2rem">All three summarized, with the observer-effect follow-up that measured the reporting changing a public body — <a href="work-samples/index.html" style="color:var(--accent)">the work-samples page →</a></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="section-title">Five story ideas</h2>
+  <p class="sec-note">Each idea ships the engine and its confirmed public starter data. These are prospective pitches: the builds show the method and the records, and frame anything the reporting would generate as a build, never a finding.</p>
+  <div class="grid2">
+    <div class="fcard" style="--pkg:var(--airportv)"><p class="kick">Flagship · debt vs. revenue</p><h3>Can the airport pay for its terminal?</h3><p class="dek">A stress test on $1.7B in bonds against four shaky revenue pillars: gaming set-asides, Marcellus wells past peak, expiring federal money, and passenger growth that has not arrived.</p><div class="actions"><a class="btn solid" href="ideas/01-airport-viability/index.html">Open the build</a></div></div>
+    <div class="fcard" style="--pkg:var(--align)"><p class="kick">Follow the money</p><h3>The Alignment Map</h3><p class="dek">City and county council, the mayor, the county executive: what they vote and fund, set against what donors and lobbyists want, set against what the public wants. The gap is the story.</p><div class="actions"><a class="btn solid" href="ideas/02-alignment-map/index.html">Open the build</a></div></div>
+    <div class="fcard" style="--pkg:var(--nursing)"><p class="kick">Hidden harm</p><h3>Hours Per Resident</h3><p class="dek">CMS payroll-verified staffing joined to harm outcomes for every Allegheny nursing home, tested for a case-mix-adjusted gradient.</p><div class="actions"><a class="btn solid" href="ideas/03-hours-per-resident/index.html">Open the build</a></div></div>
+    <div class="fcard" style="--pkg:var(--ladder)"><p class="kick">Predatory mechanics</p><h3>The Fee Ladder</h3><p class="dek">On a low-value home, the charges to redeem a tax delinquency pass the tax itself before the sale is scheduled. The ratio, by municipality, from public lien data.</p><div class="actions"><a class="btn solid" href="ideas/04-fee-ladder/index.html">Open the build</a></div></div>
+    <div class="fcard" style="--pkg:var(--earmark)"><p class="kick">Follow the money</p><h3>The Earmark Loop</h3><p class="dek">State capital grants are legislator-written line-items. The donation-then-earmark ordering, grantee principals giving before the line-item, is a join no one has run.</p><div class="actions"><a class="btn solid" href="ideas/05-earmark-loop/index.html">Open the build</a></div></div>
+    <div class="fcard" style="border-left-color:var(--rule)"><p class="kick">The slate</p><h3>All five, with the method</h3><p class="dek">The engine, the coverage-gap scan, and how each idea's starter data was built and tiered.</p><div class="actions"><a class="btn" href="ideas/index.html">Open the slate</a></div></div>
+  </div>
+</div></section>
+
+<div class="foot"><div class="wrap">
+  Brian Nuckols · Pittsburgh · <a href="mailto:brianjnuckols@gmail.com">brianjnuckols@gmail.com</a> · <a href="https://bnuckols13.github.io/">portfolio</a> · <a href="https://substack.com/@briannuckols">Substack</a><br>
+  Data licensed CC BY 4.0; harness code MIT. The story ideas are prospective pitches, tiered by evidence; no finding is asserted that the reporting has not yet produced.
+</div></div>
+
+<script>
+document.getElementById('themeBtn').addEventListener('click',()=>{const r=document.documentElement,c=r.getAttribute('data-theme');const d=c?c==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark');});
+</script>
+</body>
+</html>

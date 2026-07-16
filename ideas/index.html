@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five story ideas — Brian Nuckols, Newsworks Lab</title>
+<link rel="stylesheet" href="../assets/hub.css">
+</head>
+<body>
+<div class="wrap wide">
+  <button class="toggle" id="themeBtn">◐ theme</button>
+  <a class="backlink" href="../index.html">← Application dashboard</a>
+  <div class="hero">
+    <p class="kick">Five story ideas · western Pennsylvania</p>
+    <h1>Five ideas, one engine</h1>
+    <p class="lede">Each is a reusable public-records production line pointed at the region: a bond filing, a payroll journal, a lien dataset, a capital-budget line-item, a campaign-finance database. Every source archived and hashed so a reader re-verifies it with no network and no keys.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="fcard" style="--pkg:var(--airportv)">
+      <p class="kick">01 · Flagship · captured revenue math</p>
+      <h3>Can the airport pay for its terminal?</h3>
+      <p class="dek">A debt-service-coverage stress test on $1.7 billion in bonds against four revenue pillars that are each, for different reasons, less certain than the debt they secure: gaming set-asides, Marcellus wells past peak, expiring federal money, and passenger growth that has not arrived.</p>
+      <a class="btn solid" href="01-airport-viability/index.html">Open the build</a>
+    </div>
+    <div class="fcard" style="--pkg:var(--align)">
+      <p class="kick">02 · Follow the money</p>
+      <h3>The Alignment Map</h3>
+      <p class="dek">City Council, County Council, the mayor, the county executive: what they vote and fund, set against what donors and registered lobbyists want, set against what residents say they want. The gaps among the three are the story.</p>
+      <a class="btn solid" href="02-alignment-map/index.html">Open the build</a>
+    </div>
+    <div class="fcard" style="--pkg:var(--nursing)">
+      <p class="kick">03 · Hidden harm to bodies</p>
+      <h3>Hours Per Resident</h3>
+      <p class="dek">CMS payroll-verified staffing joined to Care Compare harm outcomes for every Allegheny nursing home, tested for a case-mix-adjusted gradient. Correlation, not cause, and named homes get right of reply.</p>
+      <a class="btn solid" href="03-hours-per-resident/index.html">Open the build</a>
+    </div>
+    <div class="fcard" style="--pkg:var(--ladder)">
+      <p class="kick">04 · Predatory mechanics</p>
+      <h3>The Fee Ladder</h3>
+      <p class="dek">On a low-value home, the interest and collection charges to redeem a tax delinquency pass the tax itself before the sale is scheduled. The fee-to-tax ratio, by municipality, from public lien data.</p>
+      <a class="btn solid" href="04-fee-ladder/index.html">Open the build</a>
+    </div>
+    <div class="fcard" style="--pkg:var(--earmark)">
+      <p class="kick">05 · Follow the money</p>
+      <h3>The Earmark Loop</h3>
+      <p class="dek">State capital grants are legislator-written line-items. The donation-then-earmark ordering, grantee principals giving before the line-item carries their award, is a join no one has run.</p>
+      <a class="btn solid" href="05-earmark-loop/index.html">Open the build</a>
+    </div>
+    <div class="fcard" style="border-left-color:var(--rule)">
+      <p class="kick">How these were built</p>
+      <h3>The method, and the honesty of it</h3>
+      <p class="dek">Each idea was scored on how publishable and how under-reported it is, then written to full editor-pitch grade. Each ships its confirmed public starter data; anything the reporting would generate is marked a build, never asserted as a finding.</p>
+    </div>
+  </div>
+
+  <h2 class="sh">Two tiers, kept visible</h2>
+  <p>Every fact on these pages is one of two kinds, and the page says which. <span class="tier confirmed">Confirmed</span> means a public record that exists right now, archived and citable. <span class="tier build">Build</span> means the dataset the reporting would generate: a cross-reference, a match, a scored table that does not exist until the requests go out. No page asserts a finding it has not produced, names a victim it has not verified, or alleges an exchange the records do not show. Institutions are framed as institutions and owed right of reply; where a quid pro quo is the question, it stays a documented question.</p>
+
+  <div class="foot">
+    Brian Nuckols · <a href="mailto:brianjnuckols@gmail.com">brianjnuckols@gmail.com</a> · <a href="https://bnuckols13.github.io/">portfolio</a>. Prospective pitches, tiered by evidence.
+  </div>
+</div>
+<script>document.getElementById('themeBtn').addEventListener('click',()=>{const r=document.documentElement,c=r.getAttribute('data-theme');const d=c?c==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark');});</script>
+</body>
+</html>

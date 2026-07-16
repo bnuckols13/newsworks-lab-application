@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can the airport pay for its terminal? — story idea</title>
+<link rel="stylesheet" href="../../assets/hub.css">
+<style>
+  :root{--pkg:var(--airportv)}
+  .tool{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--pkg);border-radius:12px;padding:1.3rem 1.4rem;box-shadow:var(--shadow);margin:1.2rem 0}
+  .disc{font-family:var(--sans);font-size:.8rem;color:var(--warn);background:color-mix(in srgb,var(--warn) 10%,transparent);border-radius:8px;padding:.6rem .8rem;margin:0 0 1rem}
+  .rev{margin:.7rem 0}
+  .rev label{font-family:var(--sans);font-size:.84rem;display:flex;justify-content:space-between;color:var(--soft);margin-bottom:.2rem}
+  .rev label b{color:var(--ink);font-variant-numeric:tabular-nums}
+  input[type=range]{width:100%;accent-color:var(--pkg)}
+  .risk{font-family:var(--sans);font-size:.75rem;color:var(--faint);margin-top:.15rem}
+  .verdict{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin:1.1rem 0 .3rem;padding-top:1rem;border-top:1px solid var(--rule-soft)}
+  .verdict .big{font-family:var(--sans);font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  .verdict .lab{font-family:var(--sans);font-size:.82rem;color:var(--soft)}
+  .bar{height:12px;border-radius:6px;background:var(--rule-soft);overflow:hidden;margin:.4rem 0}
+  .bar>span{display:block;height:100%;border-radius:6px;transition:width .25s,background .25s}
+  .presets{display:flex;flex-wrap:wrap;gap:.4rem;margin:.9rem 0 0}
+  .presets button{font-family:var(--sans);font-size:.78rem;cursor:pointer;border:1px solid var(--rule);background:var(--paper);color:var(--soft);border-radius:999px;padding:.3rem .7rem}
+  .presets button:hover{border-color:var(--pkg);color:var(--pkg)}
+</style>
+</head>
+<body>
+<div class="wrap" style="--pkg:var(--airportv)">
+  <button class="toggle" id="themeBtn">◐ theme</button>
+  <a class="backlink" href="../index.html">← The five ideas</a>
+  <div class="hero">
+    <p class="kick">Story idea 01 · flagship · captured revenue math</p>
+    <h1>Can the airport pay for its terminal?</h1>
+    <p class="lede">The Allegheny County Airport Authority just opened a $1.75 billion terminal on borrowed money. Four revenue streams are pledged to carry that debt to 2056. Each one, for a different reason, is less certain than the bonds it secures.</p>
+    <p><span class="tier confirmed">Confirmed</span> the debt, the capacity gap, the well decline, the funding cliff &nbsp; <span class="tier build">Build</span> the coverage model and the scenario table</p>
+  </div>
+
+  <h2 class="sh">The stress test</h2>
+  <p>The published <a href="https://bnuckols13.github.io/pittsburgh-airport-terminal-record/">Airport Terminal Record</a> established the debt: $1.248 billion in modernization bonds outstanding and $2.505 billion in debt service scheduled through 2056, an average near $81 million a year. This idea asks the next question. Move the four revenue pillars and watch whether they still cover the yearly debt service.</p>
+
+  <div class="tool">
+    <div class="disc"><b>A model, not a forecast.</b> The debt-service figure is confirmed from the bond documents. The revenue baselines below are illustrative starting points the reporting would confirm against the authority's financial statements; they are not asserted as the authority's actual figures. The point is the shape of the risk, not a prediction.</div>
+
+    <div class="rev">
+      <label>Gaming set-aside <b><span id="v0">$12M</span>/yr</b></label>
+      <input type="range" id="r0" min="0" max="20" value="12" step="1">
+      <div class="risk">State gaming taxes are directed to the airport by statute, and a statute can be rewritten. Sports-fixing indictments and rising behavioral-health costs put the base under pressure.</div>
+    </div>
+    <div class="rev">
+      <label>Marcellus gas royalties <b><span id="v1">$6M</span>/yr</b></label>
+      <input type="range" id="r1" min="0" max="15" value="6" step="1">
+      <div class="risk">Production peaked in 2018 and has declined since; 14 of 45 permitted wells were drilled and 8 already deactivated, against a regulatory future for fossil fuels that is itself contested.</div>
+    </div>
+    <div class="rev">
+      <label>Federal infrastructure support <b><span id="v2">$15M</span>/yr</b></label>
+      <input type="range" id="r2" min="0" max="25" value="15" step="1">
+      <div class="risk">The authority has drawn roughly $130 million in federal money; the Infrastructure Investment and Jobs Act authorization expires in FY 2026, and the next decade's level is unknown.</div>
+    </div>
+    <div class="rev">
+      <label>Passenger-linked revenue <b><span id="v3">$55M</span>/yr</b></label>
+      <input type="range" id="r3" min="20" max="80" value="55" step="1">
+      <div class="risk">Charges and passenger fees scale with traffic. The terminal was built for 13 to 15 million passengers; 2024 demand was 9.95 million, and no new routes or airline commitments were announced at the opening.</div>
+    </div>
+
+    <div class="verdict">
+      <span class="big" id="cov" style="color:var(--pkg)">1.09×</span>
+      <span class="lab">coverage of the <b id="ds">$81M</b> average annual debt service &nbsp;·&nbsp; total revenue <b id="tot">$88M</b></span>
+    </div>
+    <div class="bar"><span id="barfill" style="width:100%;background:var(--pkg)"></span></div>
+    <div class="risk" id="callout">Above 1.0×, the pledged streams cover the year's debt service in this illustration. Drag any pillar down, or try a scenario.</div>
+
+    <div class="presets">
+      <button data-s="reset">Reset</button>
+      <button data-s="gaming">Gaming cut in half</button>
+      <button data-s="gas">Gas keeps declining</button>
+      <button data-s="fed">Federal money −50%</button>
+      <button data-s="pax">Passengers stay flat</button>
+      <button data-s="stack">All four at once</button>
+    </div>
+  </div>
+
+  <h2 class="sh">The pitch</h2>
+  <div class="n7">
+    <h3>The hook</h3>
+    <p>At its own ribbon-cutting for a $1.75 billion terminal, the Allegheny County Airport Authority would not disclose the annual debt service on $1.7 billion in bonds. The bond documents carry the number the authority would not say aloud: roughly $2.5 billion in debt service scheduled to 2056. The question the opening did not answer is whether the revenue pledged against it holds.</p>
+    <h3>The story</h3>
+    <p>Four streams are supposed to service the terminal debt, and each carries a documented risk: a gaming set-aside that a legislature can revoke, Marcellus royalties from wells past their 2018 peak, federal money on a program that sunsets in 2026, and passenger charges on a terminal running at two-thirds of its design traffic. The story builds a debt-service-coverage model from the authority's own financial statements and tests it against decline scenarios on each pillar. The finding is the coverage table and the questions the authority declined to answer, not a prediction of default.</p>
+    <h3>Why now</h3>
+    <p>The terminal is open and the borrowing is done, so the revenue side is the live variable. The federal authorization expires in FY 2026, gas production is still falling, and no new routes were announced at the opening, which makes the coverage question a this-year question rather than a someday one.</p>
+    <h3>Why you</h3>
+    <p>I already published the debt figures the authority withheld, as the reproducible <a href="https://bnuckols13.github.io/pittsburgh-airport-terminal-record/">Airport Terminal Record</a>. My method is records and data: the EMMA bond filings, the PA Gaming Control Board reports, the DEP well-production data, and the authority's audited statements, each archived and SHA-256 hashed so a reader rebuilds the coverage model with no network and no trust in me.</p>
+    <h3>The reporting plan</h3>
+    <p>Confirmed and in hand: the debt-service schedule from the bond documents, the well count and 2018 production peak, the federal sunset, the 9.95-million-passenger figure against the 13-to-15-million design. The build: the actual current dollar figure for each revenue pillar from the audited statements, the authority's own scenario planning through a records request, and the coverage table under stated decline assumptions. Every revenue baseline is tiered as confirmed or pending.</p>
+    <h3>Logistics</h3>
+    <p>Staff role. First bite: the coverage model and the four-pillar risk read. Then one bite per pillar as its figure is confirmed. The archive hands off, so a partner newsroom can run the same model against another airport authority's bonds.</p>
+    <h3>The close</h3>
+    <p>The authority built for fifteen million passengers, serves ten, and pledged a gaming set-aside, a gas field past peak, and an expiring federal program to carry the difference to 2056. The bond documents are public. What the authority expects those four streams to earn is a public record waiting to be requested.</p>
+  </div>
+
+  <h2 class="sh">Sources</h2>
+  <table>
+    <thead><tr><th>What</th><th>Where</th><th>Tier</th></tr></thead>
+    <tbody>
+      <tr><td>$1.248B bonds outstanding · $2.505B debt service to 2056</td><td class="src">EMMA bond filings; the published Airport Terminal Record</td><td><span class="tier confirmed">Confirmed</span></td></tr>
+      <tr><td>Terminal design 13–15M passengers vs 9.95M (2024) demand</td><td class="src">ACAA / BTS passenger data; the ribbon-cutting reporting</td><td><span class="tier confirmed">Confirmed</span></td></tr>
+      <tr><td>Marcellus wells: 14 of 45 drilled, 8 deactivated, production peaked 2018</td><td class="src">PA DEP well-production data</td><td><span class="tier confirmed">Confirmed</span></td></tr>
+      <tr><td>~$130M federal money drawn · IIJA authorization expires FY 2026</td><td class="src">FAA / IIJA grant records</td><td><span class="tier confirmed">Confirmed</span></td></tr>
+      <tr><td>Gaming set-aside directed to the airport by statute</td><td class="src">PA Gaming Control Board reports; the gaming statute</td><td><span class="tier confirmed">Confirmed</span></td></tr>
+      <tr><td>Current annual dollar figure for each of the four revenue pillars</td><td class="src">ACAA audited financial statements (records request)</td><td><span class="tier build">Build</span></td></tr>
+      <tr><td>The authority's own scenario planning for revenue decline</td><td class="src">Right-to-Know request to ACAA</td><td><span class="tier build">Build</span></td></tr>
+    </tbody>
+  </table>
+  <p class="src">The authority is an institution and owed right of reply before publication. The reporter's own political observations at the ribbon-cutting are context, not the story; they are not published as findings.</p>
+
+  <div class="foot">Brian Nuckols · <a href="mailto:brianjnuckols@gmail.com">brianjnuckols@gmail.com</a> · <a href="../index.html">the five ideas</a> · <a href="../../index.html">dashboard</a>. A scenario model on confirmed debt against illustrative revenue; no forecast asserted.</div>
+</div>
+<script>
+const base=[12,6,15,55], ds=81;
+const r=[0,1,2,3].map(i=>document.getElementById('r'+i));
+function fmt(x){return '$'+x+'M';}
+function render(){
+  let tot=0; r.forEach((el,i)=>{const v=+el.value;tot+=v;document.getElementById('v'+i).textContent=fmt(v);});
+  const cov=tot/ds;
+  document.getElementById('tot').textContent=fmt(tot);
+  document.getElementById('cov').textContent=cov.toFixed(2)+'×';
+  const col=cov>=1.05?'var(--earmark)':cov>=1?'var(--pkg)':cov>=0.9?'var(--ladder)':'var(--nursing)';
+  document.getElementById('cov').style.color=col;
+  const bf=document.getElementById('barfill');
+  bf.style.width=Math.min(100,cov/1.4*100)+'%'; bf.style.background=col;
+  const c=document.getElementById('callout');
+  c.textContent = cov>=1 ? 'Above 1.0×, the pledged streams cover the year’s debt service in this illustration. Drag any pillar down, or try a scenario.'
+    : 'Below 1.0×, the pledged streams fall short of the year’s debt service in this illustration, and the gap would come from rates, reserves, or new borrowing — the question the reporting puts to the authority.';
+}
+r.forEach(el=>el.addEventListener('input',render));
+const S={reset:[12,6,15,55],gaming:[6,6,15,55],gas:[12,1,15,55],fed:[12,6,7,55],pax:[12,6,15,40],stack:[6,1,7,40]};
+document.querySelectorAll('.presets button').forEach(b=>b.addEventListener('click',()=>{const s=S[b.dataset.s];r.forEach((el,i)=>el.value=s[i]);render();}));
+render();
+document.getElementById('themeBtn').addEventListener('click',()=>{const rt=document.documentElement,c=rt.getAttribute('data-theme');const d=c?c==='dark':matchMedia('(prefers-color-scheme:dark)').matches;rt.setAttribute('data-theme',d?'light':'dark');});
+</script>
+</body>
+</html>
