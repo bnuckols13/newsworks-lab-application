@@ -17,7 +17,7 @@ ideas/
   01-airport-viability/ flagship: an interactive debt-service stress test on the terminal bonds
   02-alignment-map/     what officials do vs. donors/lobbyists vs. the public
   03-hours-per-resident/ CMS nursing-home staffing vs. harm, case-mix-adjusted
-  04-fee-ladder/        tax-delinquency redemption charges vs. the tax, from public lien data
+  04-ai-surveillance/   which western-PA police agencies run AI ID and surveillance, and who checks it
   05-disclosure-gap/    local officials tested against the financial-disclosure form they file
 assets/                 shared style (style.css for reading pages, hub.css for hubs/ideas)
 ```
